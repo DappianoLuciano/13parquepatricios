@@ -1,0 +1,127 @@
+/* El Plumero — estilos */
+
+html {
+	margin: 0;
+	padding: 0;
+	background: #0d0d0d;
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #0d0d0d;
+	overflow: hidden;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#canvas {
+	width: 724px;
+	height: 482px;
+	margin: 0 auto;
+	visibility: hidden;
+}
+
+#book-zoom {
+}
+
+.sj-book {
+	width: 724px;
+	height: 482px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.sj-book * {
+	box-shadow: none !important;
+}
+
+/* StPageFlip - eliminar todas las sombras */
+.stf__block,
+.stf__item,
+.stf__wrapper {
+	box-shadow: none !important;
+}
+
+/* Ocultar elementos de sombra */
+.stf__outerShadow,
+.stf__innerShadow,
+[class*="shadow"],
+[class*="Shadow"] {
+	display: none !important;
+	opacity: 0 !important;
+	visibility: hidden !important;
+}
+
+canvas {
+	box-shadow: none !important;
+}
+
+.sj-book > div {
+	box-shadow: none !important;
+}
+
+/* ─── Sidebar título izquierdo ───────────────────────────────────────────────── */
+
+#sidebar-title {
+	position: fixed;
+	left: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	z-index: 100;
+	pointer-events: none;
+	color: white;
+}
+
+#sidebar-title h1,
+#sidebar-title h2,
+#sidebar-title h3 {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+.titulo-principal {
+	font-family: 'Anton', sans-serif;
+	font-size: 45px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+
+.subtitulo {
+	font-family: 'Playfair Display', serif;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.logo-script {
+	font-family: 'Pacifico', cursive;
+	font-size: 34px;
+}
+
+#sidebar-right {
+	position: fixed;
+	right: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	z-index: 100;
+	pointer-events: none;
+	color: white;
+	text-align: right;
+}
+
+#sidebar-right span {
+	display: block;
+	line-height: 1;
+}
+
+/* Limpieza de estilos antiguos */
