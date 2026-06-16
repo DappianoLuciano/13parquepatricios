@@ -19,8 +19,8 @@ body {
 }
 
 #canvas {
-	width: 724px;
-	height: 482px;
+	width: 800px;
+	height: 533px;
 	margin: 0 auto;
 	visibility: hidden;
 }
@@ -29,8 +29,8 @@ body {
 }
 
 .sj-book {
-	width: 724px;
-	height: 482px;
+	width: 800px;
+	height: 533px;
 	margin: 0 auto;
 	overflow: hidden;
 }

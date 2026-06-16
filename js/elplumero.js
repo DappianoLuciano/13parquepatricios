@@ -24,13 +24,13 @@ function loadApp() {
 
 	// Inicializar StPageFlip
 	var pageFlip = new St.PageFlip(container, {
-		width: 362,      // ancho de una página
-		height: 482,     // alto de una página
+		width: 400,      // ancho de una página
+		height: 533,     // alto de una página
 		size: 'fixed',
-		minWidth: 362,
-		maxWidth: 362,
-		minHeight: 482,
-		maxHeight: 482,
+		minWidth: 400,
+		maxWidth: 400,
+		minHeight: 533,
+		maxHeight: 533,
 		maxShadowOpacity: 0,
 		showCover: false,  // NO mostrar portada sola
 		mobileScrollSupport: false,
