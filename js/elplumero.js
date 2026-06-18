@@ -178,55 +178,24 @@ function initScrollToVideo() {
 
 function showVideo() {
 	var videoContainer = document.getElementById('video-container');
-	var video = document.getElementById('fashion-video');
+	var iframe = document.getElementById('fashion-video');
 
 	// Mostrar el video inmediatamente
 	videoContainer.style.display = 'flex';
-	video.style.display = 'block';
-	video.play();
 
-	// Agregar event listener para pantalla completa al hacer clic
-	video.addEventListener('click', toggleFullscreen);
-}
-
-function toggleFullscreen() {
-	var video = document.getElementById('fashion-video');
-
-	if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
-		// Entrar en pantalla completa
-		if (video.requestFullscreen) {
-			video.requestFullscreen();
-		} else if (video.webkitRequestFullscreen) {
-			video.webkitRequestFullscreen();
-		} else if (video.mozRequestFullScreen) {
-			video.mozRequestFullScreen();
-		} else if (video.msRequestFullscreen) {
-			video.msRequestFullscreen();
-		}
-	} else {
-		// Salir de pantalla completa
-		if (document.exitFullscreen) {
-			document.exitFullscreen();
-		} else if (document.webkitExitFullscreen) {
-			document.webkitExitFullscreen();
-		} else if (document.mozCancelFullScreen) {
-			document.mozCancelFullScreen();
-		} else if (document.msExitFullscreen) {
-			document.msExitFullscreen();
-		}
-	}
+	// Reproducir video de YouTube usando postMessage
+	iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 }
 
 function hideVideo() {
 	var videoContainer = document.getElementById('video-container');
-	var video = document.getElementById('fashion-video');
+	var iframe = document.getElementById('fashion-video');
 
-	// Pausar video
-	video.pause();
-	video.currentTime = 0;
+	// Pausar video de YouTube usando postMessage
+	iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
 
-	// Remover event listener de pantalla completa
-	video.removeEventListener('click', toggleFullscreen);
+	// Reiniciar video
+	iframe.contentWindow.postMessage('{"event":"command","func":"seekTo","args":[0, true]}', '*');
 
 	// Ocultar el video
 	videoContainer.style.display = 'none';
