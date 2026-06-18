@@ -179,12 +179,26 @@ function initScrollToVideo() {
 function showVideo() {
 	var videoContainer = document.getElementById('video-container');
 	var iframe = document.getElementById('fashion-video');
+	var overlay = document.getElementById('video-overlay');
 
 	// Mostrar el video inmediatamente
 	videoContainer.style.display = 'flex';
 
 	// Reproducir video de YouTube usando postMessage
 	iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+
+	// Configurar overlay para capturar clicks y ocultarse temporalmente
+	var overlayTimeout;
+	overlay.addEventListener('click', function() {
+		overlay.classList.add('hidden');
+		clearTimeout(overlayTimeout);
+		overlayTimeout = setTimeout(function() {
+			overlay.classList.remove('hidden');
+		}, 3000);
+	});
+
+	// Mostrar overlay si está oculto
+	overlay.classList.remove('hidden');
 }
 
 function hideVideo() {
